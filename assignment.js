@@ -33,10 +33,6 @@ const server = http.createServer((req,res) =>{
         })
             res.statusCode = 302
             res.setHeader('Location','/')
-            res.write('<html>')
-            res.write('<head><title>User List</title></head>')
-            res.write('<body><h1>Congratulation! Data submitted!!</h1></body>')
-            res.write('</html>')
             return res.end()
 
     }
