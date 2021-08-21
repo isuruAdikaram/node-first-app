@@ -1,10 +1,19 @@
 // server created
 
-const http = require('http')
+const express = require('express')
 
-const routes = require('./routes')
+const bodyParser =require('body-parser')
 
+const adminRoutes = require('./routes/admin')
 
-const server = http.createServer(routes.handler)
+const shopRoutes = require('./routes/shop')
 
-server.listen(3000)
+const app = express()
+
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.use(adminRoutes)
+
+app.use(shopRoutes)
+
+app.listen(3000)
